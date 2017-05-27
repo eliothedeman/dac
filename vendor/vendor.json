@@ -1,0 +1,49 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "Yvd8z26zSgktRPGaYuFRdI9C1Jo=",
+			"path": "github.com/cheekybits/genny",
+			"revision": "9127e812e1e9e501ce899a18121d316ecb52e4ba",
+			"revisionTime": "2017-03-28T20:00:08Z"
+		},
+		{
+			"checksumSHA1": "PYXuf7wvcj492uWhjvmXlyyQUYc=",
+			"path": "github.com/cheekybits/genny/generic",
+			"revision": "9127e812e1e9e501ce899a18121d316ecb52e4ba",
+			"revisionTime": "2017-03-28T20:00:08Z"
+		},
+		{
+			"checksumSHA1": "KHwgmNBKpAikS45IefCXX6bKgBU=",
+			"path": "github.com/cheekybits/genny/parse",
+			"revision": "9127e812e1e9e501ce899a18121d316ecb52e4ba",
+			"revisionTime": "2017-03-28T20:00:08Z"
+		},
+		{
+			"checksumSHA1": "RiQk36Two5xwPgsDB5mYpbZUlRA=",
+			"path": "github.com/go-audio/audio",
+			"revision": "31e31cb4998366b27821bb818fdd671bf29db750",
+			"revisionTime": "2017-02-28T09:06:11Z"
+		},
+		{
+			"checksumSHA1": "CYXse28V9k7HV93j6HIAyRqjpI4=",
+			"path": "github.com/gordonklaus/portaudio",
+			"revision": "e3db054b5758f438a1322fc1712f11074fad107a",
+			"revisionTime": "2017-04-18T09:08:38Z"
+		},
+		{
+			"checksumSHA1": "ikor+YKJu2eKwyFteBWhsb8IGy8=",
+			"path": "golang.org/x/tools/go/ast/astutil",
+			"revision": "bf4b54dc687c73b6ef63de8b8abf0ad3951e3edc",
+			"revisionTime": "2017-05-15T17:12:53Z"
+		},
+		{
+			"checksumSHA1": "QkwEY8RzyVGo0pCxeeugexGM5rs=",
+			"path": "golang.org/x/tools/imports",
+			"revision": "bf4b54dc687c73b6ef63de8b8abf0ad3951e3edc",
+			"revisionTime": "2017-05-15T17:12:53Z"
+		}
+	],
+	"rootPath": "github.com/eliothedeman/dac"
+}
