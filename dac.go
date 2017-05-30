@@ -1,9 +1,10 @@
 package dac
 
-import "time"
-
 // AudioInterface constructs a new input callback
-type AudioInterface func(sampleRate, bufferSize, inChannels, outChannels int) (AudioCallback, error)
+type AudioInterface func(sampleRate, bufferSize, inChannels, outChannels int) (AudioInterfaceCallback, error)
+
+// AudioInterfaceCallback Will run on the audio interface
+type AudioInterfaceCallback func(AudioCallback) error
 
 var audioInterface AudioInterface
 
@@ -13,26 +14,26 @@ type AudioCallback func(in, out *Buffer) error
 // DAC is a digital audio converter. It provides an interface for reading and writing audio samples
 type DAC struct {
 	callbacks      []AudioCallback
-	onSample       AudioCallback
+	onSample       AudioInterfaceCallback
 	sampleRate     int
 	inputChannels  int
 	outputChannels int
 }
 
 func (d *DAC) MainLoop() {
-	i := GetBuffer(d.inputChannels)
-	o := GetBuffer(d.outputChannels)
-	for range time.Tick(time.Second / time.Duration(d.sampleRate*gBufferSize)) {
-		err := d.onSample(i, o)
+	var err error
+	for {
+		err = d.onSample(func(i, o *Buffer) error {
+			for _, c := range d.callbacks {
+				err := c(i, o)
+				if err != nil {
+					panic(err)
+				}
+			}
+			return nil
+		})
 		if err != nil {
 			panic(err)
-		}
-
-		for _, c := range d.callbacks {
-			err = c(i, o)
-			if err != nil {
-				panic(err)
-			}
 		}
 
 	}
